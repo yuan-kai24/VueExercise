@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<span v-html="vtext"></span>
+			<span>
+				{{message.split("").reverse().join("")}}
+			</span>
+			<br />
+			<a :href="url">123</a>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				vtext:"<h1>Test</h1>",
+				message:"Hello World!",
+				url:"http://www.baidu.com"
+			}
+		})
+	</script>
+</html>

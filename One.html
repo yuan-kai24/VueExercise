@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VueExercise</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<span v-bind:title="messge2">
+			{{messge}}
+		</span>
+
+		</div>
+		<div id="app2">
+			<span v-if="seon">
+				哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或
+				
+			</span>
+			<button id="app2_test" @click="reges">单击事件</button>
+		</div>
+		
+		<div id="app3">
+			<ul>
+				<li v-for="toods in tood">
+					{{toods.texts}}
+				</li>
+			</ul>
+			
+		</div>
+		
+		<div id="app4">
+			<p>{{messge}}</p>
+			绑定:<input type="text" v-model="messge" /> 
+			<button v-on:click="ressge">逆转</button>
+		</div>
+		
+		<div id="app5">
+			<ul>
+				<yk v-for="item in gList" v-bind:todo="item" v-bind:key="item.id"></yk>
+			</ul>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: '#app',
+			data: {
+				messge: "信息",
+				messge2: "时间" + new Date().toLocaleString()
+			
+			}
+		})
+		
+		var app2 = new Vue({
+			el:"#app2",
+			data:{
+				seon:true
+			},
+			methods:{
+				reges:function ()
+				{
+					this.seon = !this.seon
+				}
+			}
+		})
+		
+		var app3 = new Vue({
+			el:"#app3",
+			data:{
+				tood:[
+				{texts:"呵呵"},
+				{texts:"哈哈"},
+				{texts:"嘿嘿"}
+				
+				]
+			}
+			
+		})
+		
+		var app4 = new Vue({
+			el:"#app4",
+			data:{
+				messge:'hellow vue!'
+			},
+			methods:{
+				ressge:function ()
+				{
+					this.messge = this.messge.split('').reverse().join('')
+				}
+			}
+		})
+		
+		Vue.component('yk',{
+			props:['todo'],
+			template:'<li>{{todo.text}}</li>'
+		})
+		var app5 = new Vue({
+			el:"#app5",
+			data:{
+				gList:[
+				{id:0,text:"唉！"},
+				{id:1,text:"哼！"},
+				{id:2,text:"哟！"}
+				]
+			}
+		})
+	</script>
+
+</html>
