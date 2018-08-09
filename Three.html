@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.a{
+				color:red;
+				width: 200px;
+				height: 200px;
+				line-height: 200px;
+				text-align: center;
+				font-size: 15px;
+			}
+			.b{
+				background:blue;
+			}
+			.c{
+				border: 5px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="app" class="a" v-bind:class="{b:isone,c:hastwo}" @click="change">
+			哈 哈 哈 哈
+		</div>
+		
+		
+	</body>
+	
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				isone:true,
+				hastwo:false
+			},
+			methods:{
+				change:function (){
+					this.hastwo = !this.hastwo
+				}
+			},
+			watch:{
+				hastwo:function ()
+				{
+					alert(this.hastwo)
+				}
+			}
+			
+		})
+	</script>
+</html>
