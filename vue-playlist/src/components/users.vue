@@ -7,6 +7,7 @@
         <h3 v-show="user.show">{{user.position}}</h3>
       </li>
     </ul>
+    <button @click="deletUser">删除</button>
   </div>
 </template>
 
@@ -14,19 +15,22 @@
 
 export default {
   name: 'users',
+  // props:["users"]
+  props:{
+    users:{
+      type:Array,
+      required:true
+    }
+  },
   data(){
     return{
-      users:[
-        {name:"Henry",position:"Web开发",show:false},
-        {name:"Henry",position:"Web开发",show:false},
-        {name:"Henry",position:"Web开发",show:false},
-        {name:"Henry",position:"Web开发",show:false},
-        {name:"Henry",position:"Web开发",show:false},
-        {name:"Henry",position:"Web开发",show:false},
-        {name:"Henry",position:"Web开发",show:false},
-        {name:"Henry",position:"Web开发",show:false},
-        {name:"Henry",position:"Web开发",show:false},
-      ]
+
+    }
+  },
+  methods:{
+    deletUser:function ()
+    {
+      this.users.pop()
     }
   }
 }

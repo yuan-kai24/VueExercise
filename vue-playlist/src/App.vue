@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <app-header></app-header>
-    <users></users>
-    <app-footer></app-footer>
+    <app-header v-bind:title="title"></app-header>
+    <users v-bind:users="users"></users>
+    <users v-bind:users="users"></users>
+    <app-footer v-bind:title="title"></app-footer>
 
   </div>
 </template>
@@ -17,7 +18,19 @@ export default {
   name: 'App',
   data(){
     return{
-      title:'这是我的第一个Vue脚手架!'
+      users:[
+        {name:"Henry",position:"Web开发",show:false},
+        {name:"Henry",position:"Web开发",show:false},
+        {name:"Henry",position:"Web开发",show:false},
+        {name:"Henry",position:"Web开发",show:false},
+        {name:"Henry",position:"Web开发",show:false},
+        {name:"Henry",position:"Web开发",show:false},
+        {name:"Henry",position:"Web开发",show:false},
+        {name:"Henry",position:"Web开发",show:false},
+        {name:"Henry",position:"Web开发",show:false},
+        {name:"Henry",position:"Web开发",show:false},
+      ],
+      title:"  传递值非引用"
     }
   },
   components:{

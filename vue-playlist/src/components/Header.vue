@@ -1,16 +1,26 @@
 <template>
 	<header>
-		<h1>{{title}}</h1>
+		<h1 @click="changed">{{title}}</h1>
 	</header>
 </template>
 
 <script>
 export default {
   name: 'app-header',
+  props:{
+  	title:{
+  		type:String
+  	}
+  },
   data () {
     return {
-    	title:"vue .js demo"
     }
+  },
+  methods:{
+  	changed:function ()
+  	{
+  		this.title = "改变"
+  	}
   }
 }
 </script>
