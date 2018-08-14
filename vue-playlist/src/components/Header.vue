@@ -1,6 +1,6 @@
 <template>
 	<header>
-		<h1 @click="changed">{{title}}</h1>
+		<h1 @click="changeTitle">{{title}}</h1>
 	</header>
 </template>
 
@@ -20,6 +20,9 @@ export default {
   	changed:function ()
   	{
   		this.title = "改变"
+  	},
+  	changeTitle:function (){
+  		this.$emit("titleChanged","子向父组件传值")
   	}
   }
 }
